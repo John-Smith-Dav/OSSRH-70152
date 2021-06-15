@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <parent>
+    <groupId>org.ksw</groupId>
+    <artifactId>ksw4j-parent</artifactId>
+    <version>1.0.0.1</version>
+  </parent>
+  <modelVersion>4.0.0</modelVersion>
+  <packaging>pom</packaging>
+
+  <artifactId>ksw4j-crypto-parent</artifactId>
+  <name>ksw4j :: crypto :: parent</name>
+  <description>Parent project for ksw4j crypto modules.</description>
+
+  <modules>
+    <module>ksw4j-crypto-core</module>
+    <module>ksw4j-crypto-bouncycastle</module>
+  </modules>
+
+</project>

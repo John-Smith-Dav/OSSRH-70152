@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns="http://maven.apache.org/POM/4.0.0"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>org.ksw</groupId>
+  <artifactId>ksw4j-parent</artifactId>
+  <packaging>pom</packaging>
+  <version>1.0.0.1</version>
+
+  <name>ksw4j parent</name>
+  <description>Parent project for ksw4j modules.</description>
+  <url>https://github.com/John-Smith-Dav/ksw4j</url>
+  <inceptionYear>2021</inceptionYear>
+
+  <dependencies>
+    <!-- Enable concrete logging in all tests -->
+    <dependency>
+      <groupId>org.slf4j</groupId>
+      <artifactId>slf4j-api</artifactId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>ch.qos.logback</groupId>
+      <artifactId>logback-classic</artifactId>
+      <scope>test</scope>
+    </dependency>
+  </dependencies>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-address-codec</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-model</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-binary-codec</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-client</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-keypairs</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-crypto-core</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>${project.groupId}</groupId>
+        <artifactId>ksw4j-crypto-bouncycastle</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.github.ben-manes.caffeine</groupId>
+        <artifactId>caffeine</artifactId>
+        <version>2.8.8</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ripple.cryptoconditions</groupId>
+        <artifactId>crypto-conditions</artifactId>
+        <version>${cryptoconditions.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.ripple.cryptoconditions</groupId>
+        <artifactId>jackson-datatype-cryptoconditions</artifactId>
+        <version>${cryptoconditions.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>ch.qos.logback</groupId>
+        <artifactId>logback-classic</artifactId>
+        <version>1.2.3</version>
+      </dependency>
+      <dependency>
+        <groupId>junit</groupId>
+        <artifactId>junit</artifactId>
+        <version>4.12</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.assertj</groupId>
+        <artifactId>assertj-core</artifactId>
+        <version>3.14.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-engine</artifactId>
+        <version>${junit-jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-api</artifactId>
+        <version>${junit-jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.junit.jupiter</groupId>
+        <artifactId>junit-jupiter-params</artifactId>
+        <version>${junit-jupiter.version}</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.mockito</groupId>
+        <artifactId>mockito-core</artifactId>
+        <version>3.7.7</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.immutables</groupId>
+        <artifactId>value</artifactId>
+        <version>2.8.8</version>
+        <scope>provided</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.slf4j</groupId>
+        <artifactId>slf4j-api</artifactId>
+        <version>${slf4j.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-annotations</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-core</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.core</groupId>
+        <artifactId>jackson-databind</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-guava</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.google.guava</groupId>
+        <artifactId>guava</artifactId>
+        <version>29.0-jre</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-jdk8</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.fasterxml.jackson.datatype</groupId>
+        <artifactId>jackson-datatype-jsr310</artifactId>
+        <version>${jackson.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.skyscreamer</groupId>
+        <artifactId>jsonassert</artifactId>
+        <version>1.5.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.squareup.okhttp3</groupId>
+        <artifactId>okhttp</artifactId>
+        <version>4.8.1</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.openfeign</groupId>
+        <artifactId>feign-core</artifactId>
+        <version>${feign.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>io.github.openfeign</groupId>
+        <artifactId>feign-jackson</artifactId>
+        <version>${feign.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>org.bouncycastle</groupId>
+        <artifactId>bcprov-jdk15to18</artifactId>
+        <version>1.66</version>
+      </dependency>
+      <dependency>
+        <groupId>org.awaitility</groupId>
+        <artifactId>awaitility</artifactId>
+        <version>3.0.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.awaitility</groupId>
+        <artifactId>awaitility-proxy</artifactId>
+        <version>3.0.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>com.github.docker-java</groupId>
+        <artifactId>docker-java-api</artifactId>
+        <version>3.2.7</version>
+      </dependency>
+      <dependency>
+        <groupId>org.hamcrest</groupId>
+        <artifactId>java-hamcrest</artifactId>
+        <version>2.0.0.0</version>
+        <scope>test</scope>
+      </dependency>
+      <dependency>
+        <groupId>org.testcontainers</groupId>
+        <artifactId>testcontainers</artifactId>
+        <version>1.15.1</version>
+        <scope>test</scope>
+      </dependency>
+    </dependencies>
+  </dependencyManagement>
+
+
+  <profiles>
+    <!-- Specify android-compatible dependencies -->
+    <profile>
+      <id>android</id>
+      <properties>
+        <guava.version>28.1-android</guava.version>
+      </properties>
+    </profile>
+    <!-- Signing profile for signed distributions
+    <profile>
+      <id>release</id>
+      <build>
+        <plugins>
+          <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-gpg-plugin</artifactId>
+            <version>1.6</version>
+            <executions>
+              <execution>
+                <id>sign-artifacts</id>
+                <phase>verify</phase>
+                <goals>
+                  <goal>sign</goal>
+                </goals>
+              </execution>
+            </executions>
+          </plugin>
+        </plugins>
+      </build>
+    </profile>-->
+  </profiles>
+
+  <properties>
+
+    <maven.compiler.source>1.8</maven.compiler.source>
+    <maven.compiler.target>1.8</maven.compiler.target>
+
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <project.resources.sourceEncoding>UTF-8</project.resources.sourceEncoding>
+    <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+    <!-- org.jacoco:jacoco-maven-plugin -->
+    <jacoco.propertyName>argLine</jacoco.propertyName>
+
+    <skipITs>false</skipITs>
+
+    <cryptoconditions.version>1.0.4</cryptoconditions.version>
+    <jackson.version>2.11.2</jackson.version>
+    <feign.version>11.0</feign.version>
+    <slf4j.version>1.7.30</slf4j.version>
+    <junit-jupiter.version>5.7.1</junit-jupiter.version>
+  </properties>
+
+  <modules>
+    <module>ksw4j-binary-codec</module>
+    <module>ksw4j-model</module>
+    <module>ksw4j-address-codec</module>
+    <module>ksw4j-keypairs</module>
+    <module>ksw4j-crypto-parent</module>
+    <module>ksw4j-client</module>
+    <module>ksw4j-bom</module>
+  </modules>
+
+  <build>
+
+    <!-- All plugin versions and default config is defined in the pluginManagement section. -->
+
+    <pluginManagement>
+      <plugins>
+
+        <!-- org.codehaus.mojo:maven-compiler-plugin -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>versions-maven-plugin</artifactId>
+          <version>2.7</version>
+        </plugin>
+
+        <plugin>
+          <artifactId>maven-dependency-plugin</artifactId>
+          <version>3.1.1</version>
+          <executions>
+            <execution>
+              <id>analyze</id>
+              <goals>
+                <goal>analyze-only</goal>
+              </goals>
+              <configuration>
+                <failOnWarning>true</failOnWarning>
+                <ignoredDependencies>
+                  <ignoredDependency>org.slf4j:slf4j-api</ignoredDependency>
+                  <ignoredDependency>com.google.code.findbugs:jsr305</ignoredDependency>
+                  <ignoredDependency>com.google.code.findbugs:annotations</ignoredDependency>
+                  <ignoredDependency>com.google.errorprone:error_prone_annotations</ignoredDependency>
+                  <ignoredDependency>ch.qos.logback:logback-classic</ignoredDependency>
+                  <!-- As part of SkyStreamer, but only for test scope-->
+                  <ignoredDependency>com.vaadin.external.google:android-json</ignoredDependency>
+                  <ignoredDependency>org.junit.jupiter:junit-jupiter-engine</ignoredDependency>
+                </ignoredDependencies>
+              </configuration>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- org.apache.maven.plugins:maven-compiler-plugin -->
+        <plugin>
+          <artifactId>maven-compiler-plugin</artifactId>
+          <version>3.8.1</version>
+          <configuration>
+            <source>${maven.compiler.source}</source>
+            <target>${maven.compiler.target}</target>
+          </configuration>
+        </plugin>
+
+        <plugin>
+          <groupId>org.apache.maven.plugins</groupId>
+          <artifactId>maven-failsafe-plugin</artifactId>
+          <version>2.22.2</version>
+          <configuration>
+            <skipITs>${skipITs}</skipITs>
+            <argLine>${failsafe.argLine}</argLine>
+          </configuration>
+          <executions>
+            <execution>
+              <id>integration-tests</id>
+              <goals>
+                <goal>integration-test</goal>
+                <goal>verify</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- org.apache.maven.plugins:maven-source-plugin -->
+        <plugin>
+          <artifactId>maven-source-plugin</artifactId>
+          <version>3.1.0</version>
+          <executions>
+            <execution>
+              <id>attach-sources</id>
+              <goals>
+                <goal>jar-no-fork</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+        <!-- org.apache.maven.plugins:maven-javadoc-plugin -->
+        <plugin>
+          <artifactId>maven-javadoc-plugin</artifactId>
+          <version>3.1.0</version>
+          <configuration>
+            <excludes>
+              <exclude>**/generated-sources/**/*</exclude>
+            </excludes>
+            <!-- FIXME: Remove this once javadocs are fixed -->
+            <failOnWarnings>false</failOnWarnings>
+            <source>8</source>
+          </configuration>
+          <executions>
+            <execution>
+              <id>attach-javadocs</id>
+              <goals>
+                <goal>jar</goal>
+              </goals>
+            </execution>
+          </executions>
+        </plugin>
+
+
+        <!-- org.apache.maven.plugins:maven-surefire-plugin -->
+        <plugin>
+          <artifactId>maven-surefire-plugin</artifactId>
+          <version>2.22.2</version>
+          <configuration>
+            <!-- CircleCI build workaround -->
+            <argLine>@{argLine} -Xms1024m -Xmx2048m</argLine>
+            <reuseForks>true</reuseForks>
+            <useSystemClassLoader>false</useSystemClassLoader>
+          </configuration>
+        </plugin>
+
+        <!-- org.sonatype.plugins:nexus-staging-maven-plugin
+        <plugin>
+          <groupId>org.sonatype.plugins</groupId>
+          <artifactId>nexus-staging-maven-plugin</artifactId>
+          <version>1.6.8</version>
+          <extensions>true</extensions>
+          <configuration>
+            <serverId>ossrh-snapshots</serverId>
+            <nexusUrl>https://oss.sonatype.org/</nexusUrl>
+            <autoReleaseAfterClose>true</autoReleaseAfterClose>
+          </configuration>
+        </plugin>
+ -->
+        <!-- org.codehaus.mojo:license-maven-plugin -->
+        <plugin>
+          <groupId>org.codehaus.mojo</groupId>
+          <artifactId>license-maven-plugin</artifactId>
+          <version>1.20</version>
+          <configuration>
+            <!--license to use for the project-->
+            <licenseName>apache_v2</licenseName>
+            <processStartTag>========================LICENSE_START=================================
+            </processStartTag>
+            <processEndTag>=========================LICENSE_END==================================
+            </processEndTag>
+
+            <!--generate license file even if it exists-->
+            <force>true</force>
+
+            <licenseMerges>
+              <licenseMerge>Apache License, Version 2.0|The Apache Software License, Version 2.0|Apache
+                2|Apache License 2.0|AL 2.0
+              </licenseMerge>
+            </licenseMerges>
+
+            <!--exclude test-scoped dependencies from the 3rd party license-list-->
+            <excludedScopes>test</excludedScopes>
+
+            <excludes>
+              <exclude>**/*.json</exclude>
+            </excludes>
+
+          </configuration>
+          <executions>
+            <execution>
+              <id>license-management</id>
+              <goals>
+                <!--updates the source's headers according to the specified license-->
+                <goal>update-file-header</goal>
+
+                <!--Adds the full-blown license file to the final product-->
+                <goal>update-project-license</goal>
+
+                <!--generate and add a list of third-party licenses-->
+                <goal>add-third-party</goal>
+              </goals>
+              <phase>process-sources</phase>
+            </execution>
+          </executions>
+        </plugin>
+
+      </plugins>
+    </pluginManagement>
+
+
+    <!-- All plugins in the plugins section will be run for all sub-modules
+      unless <inherited>false</inherited> is specified. -->
+
+    <plugins>
+
+      <!-- org.apache.maven.plugins:maven-compiler-plugin -->
+      <plugin>
+        <artifactId>maven-compiler-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-failsafe-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.sonatype.plugins</groupId>
+        <artifactId>nexus-staging-maven-plugin</artifactId>
+      </plugin>
+
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-release-plugin</artifactId>
+        <version>2.5.3</version>
+        <configuration>
+          <autoVersionSubmodules>true</autoVersionSubmodules>
+          <useReleaseProfile>false</useReleaseProfile>
+          <releaseProfiles>release</releaseProfiles>
+          <goals>deploy</goals>
+        </configuration>
+      </plugin>
+
+    </plugins>
+
+  </build>
+
+  <reporting>
+    <plugins>
+
+      <!-- org.jacoco:jacoc-maven-plugin -->
+      <plugin>
+        <groupId>org.jacoco</groupId>
+        <artifactId>jacoco-maven-plugin</artifactId>
+        <inherited>false</inherited>
+        <reportSets>
+          <reportSet>
+            <reports>
+              <report>report</report>
+            </reports>
+          </reportSet>
+        </reportSets>
+      </plugin>
+
+    </plugins>
+  </reporting>
+
+</project>
