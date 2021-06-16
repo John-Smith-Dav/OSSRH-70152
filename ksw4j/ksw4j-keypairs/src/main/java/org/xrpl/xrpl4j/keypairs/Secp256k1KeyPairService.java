@@ -53,7 +53,7 @@ public class Secp256k1KeyPairService extends AbstractKeyPairService {
     return deriveKeyPair(seed, accountNumber);
   }
 
-  private KeyPair deriveKeyPair(UnsignedByteArray seed, int accountNumber) {
+  public KeyPair deriveKeyPair(UnsignedByteArray seed, int accountNumber) {
     // private key needs to be a BigInteger so we can derive the public key by multiplying G by the private key.
     BigInteger privateKey = derivePrivateKey(seed, accountNumber);
     UnsignedByteArray publicKey = derivePublicKey(privateKey);
@@ -68,7 +68,7 @@ public class Secp256k1KeyPairService extends AbstractKeyPairService {
     return UnsignedByteArray.of(ecDomainParameters.getG().multiply(privateKey).getEncoded(true));
   }
 
-  private BigInteger derivePrivateKey(UnsignedByteArray seed, int accountNumber) {
+  public BigInteger derivePrivateKey(UnsignedByteArray seed, int accountNumber) {
     BigInteger privateGen = deriveScalar(seed);
     if (accountNumber == -1) {
       return privateGen;

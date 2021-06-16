@@ -3,15 +3,22 @@
   xmlns="http://maven.apache.org/POM/4.0.0"
   xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
   <modelVersion>4.0.0</modelVersion>
-  <groupId>org.ksw</groupId>
+  <groupId>io.github.John-Smith-Dav</groupId>
   <artifactId>ksw4j-parent</artifactId>
   <packaging>pom</packaging>
-  <version>1.0.0.1</version>
+  <version>1.0.0.3</version>
 
   <name>ksw4j parent</name>
   <description>Parent project for ksw4j modules.</description>
-  <url>https://github.com/John-Smith-Dav/ksw4j</url>
+  <url>https://github.com/John-Smith-Dav/OSSRH-70152/ksw4j</url>
   <inceptionYear>2021</inceptionYear>
+
+  <scm>
+    <tag>master</tag>
+    <connection>https://github.com/John-Smith-Dav/OSSRH-70152</connection>
+    <developerConnection>https://github.com/John-Smith-Dav</developerConnection>
+    <url>https://github.com/John-Smith-Dav/OSSRH-70152</url>
+  </scm>
 
   <dependencies>
     <!-- Enable concrete logging in all tests -->
@@ -526,5 +533,40 @@
 
     </plugins>
   </reporting>
-
+  <repositories>
+    <repository>
+      <id>repository</id>
+      <name>internal repository</name>
+      <url>https://s01.oss.sonatype.org/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </repository>
+  </repositories>
+  <pluginRepositories>
+    <pluginRepository>
+      <id>repository</id>
+      <name>internal repository</name>
+      <url>https://s01.oss.sonatype.org/content/groups/public/</url>
+      <releases>
+        <enabled>true</enabled>
+      </releases>
+      <snapshots>
+        <enabled>true</enabled>
+      </snapshots>
+    </pluginRepository>
+  </pluginRepositories>
+  <distributionManagement>
+    <repository>
+      <id>releases</id><!--这个ID需要与你的release仓库的Repository ID一致-->
+      <url>https://s01.oss.sonatype.org/content/repositories/releases/</url>
+    </repository>
+    <snapshotRepository>
+      <id>snapshots</id><!--这个ID需要与你的snapshots仓库的Repository ID一致-->
+      <url>https://s01.oss.sonatype.org/content/repositories/snapshots/</url>
+    </snapshotRepository>
+  </distributionManagement>
 </project>
